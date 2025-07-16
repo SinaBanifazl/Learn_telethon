@@ -12,6 +12,14 @@ async def message_handler(event):
     text = event.text
     print(f"chat id shoma {chat_id} hast va text shoma {text} mibashad")
 
+    if text == "/start":
+        await client.send_message(chat_id, "به ربات ما خوش اومدی")
+        return
+    elif text == "/close":
+        await client.send_message(chat_id, "برنامه بسته شد")
+        return        
+    
+    await client.send_message(chat_id, "پیام شما دریافت شد دوست من. برو خونتون:)")
 
 print("bot is running...")
 client.run_until_disconnected()
