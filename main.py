@@ -6,8 +6,10 @@ BOT_TOKEN = "7611699084:AAErPfRjOMYJVY7kfzlFkazXNyi8SwiKB4c"
 
 client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
+@client.on(events.NewMessage)
+async def message_handler(event):
+    print("new message")
 
 
-print("bot is running!")
-print("==================")
+print("bot is running...")
 client.run_until_disconnected()
