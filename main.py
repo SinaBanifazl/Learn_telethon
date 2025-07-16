@@ -8,7 +8,7 @@ client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOK
 
 @client.on(events.NewMessage)
 async def message_handler(event):
-    print("new message")
+    print(event.text)
 
 
 print("bot is running...")
