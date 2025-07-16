@@ -19,9 +19,21 @@ async def message_handler(event):
         await client.send_message(chat_id, "برنامه بسته شد", reply_to=event.message.id)
         return        
     
-    await client.send_message(chat_id, f"<b>{text}</b> | بولد شده", reply_to=event.message.id, parse_mode="HTML")
-    await client.send_message(chat_id, f"<i>{text}</i> | کج شده", reply_to=event.message.id, parse_mode="HTML")
-    await client.send_message(chat_id, f"<code>{text}</code> | کد شده(قابل کپی با کلیک روی اون) ", reply_to=event.message.id, parse_mode="HTML")
+    await client.send_message(chat_id, 
+                              f"<b>{text}</b> | بولد شده", 
+                              reply_to=event.message.id, 
+                              parse_mode="HTML"
+                              )
+    await client.send_message(chat_id, 
+                              f"<i>{text}</i> | کج شده", 
+                              reply_to=event.message.id, 
+                              parse_mode="HTML"
+                              )
+    await client.send_message(chat_id, 
+                              f"<code>{text}</code> | کد شده(قابل کپی با کلیک روی اون) ", 
+                              reply_to=event.message.id, 
+                              parse_mode="HTML"
+                              )
 
 print("bot is running...")
 client.run_until_disconnected()
