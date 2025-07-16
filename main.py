@@ -19,21 +19,25 @@ async def message_handler(event):
         await client.send_message(chat_id, "برنامه بسته شد", reply_to=event.message.id)
         return        
     
-    await client.send_message(chat_id, 
-                              f"<b>{text}</b> | بولد شده", 
-                              reply_to=event.message.id, 
-                              parse_mode="HTML"
-                              )
-    await client.send_message(chat_id, 
-                              f"<i>{text}</i> | کج شده", 
-                              reply_to=event.message.id, 
-                              parse_mode="HTML"
-                              )
-    await client.send_message(chat_id, 
-                              f"<code>{text}</code> | کد شده(قابل کپی با کلیک روی اون) ", 
-                              reply_to=event.message.id, 
-                              parse_mode="HTML"
-                              )
+
+    # await client.send_message(chat_id, 
+    #                           f"<b>{text}</b> | بولد شده", 
+    #                           reply_to=event.message.id, 
+    #                           parse_mode="HTML"
+    #                           )
+    # await client.send_message(chat_id, 
+    #                           f"<i>{text}</i> | کج شده", 
+    #                           reply_to=event.message.id, 
+    #                           parse_mode="HTML"
+    #                           )
+    # await client.send_message(chat_id, 
+    #                           f"<code>{text}</code> | کد شده(قابل کپی با کلیک روی اون) ", 
+    #                           reply_to=event.message.id, 
+    #                           parse_mode="HTML"
+    #                           )
+
+    await event.respond("این پاسخم به پیامی که دادیه. میتونه تو گروه باشه یا پیوی خودم یا هر جایی. این مهمه که event فعال شده و من هر جا که پیام بدی بهت این جوابو میدم. دیگه مثل client.send.message نیست که بخوام ازت chat.id بگیرم.")
+
 
 print("bot is running...")
 client.run_until_disconnected()
