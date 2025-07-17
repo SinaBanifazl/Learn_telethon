@@ -8,7 +8,7 @@ client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOK
 
 @client.on(events.InlineQuery)
 async def inline_mode(event):
-    user_text = event.text
+    user_text = event.text.lower().strip()
 
     if user_text == "test":
         print(user_text)
