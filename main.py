@@ -20,6 +20,9 @@ async def message_handler(event):
 
     if text == "دکمه دوم":
         await event.reply("فهمیدم دکمه دوم رو زدی")
+
+    if text == "/dell":
+        await event.reply("دکمه های شما با موفقیت حذف شد", buttons=Button.clear())
     
 
 print("bot is running...")
