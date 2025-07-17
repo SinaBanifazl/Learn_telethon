@@ -6,9 +6,10 @@ BOT_TOKEN = "7611699084:AAErPfRjOMYJVY7kfzlFkazXNyi8SwiKB4c"
 
 client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
-@client.on(events.MessageEdited)
-async def message_edit(event):
-    print(event)
+@client.on(events.InlineQuery)
+async def inline_mode(event):
+    print("in use")
+
 
 print("bot is running...")
 client.run_until_disconnected()
