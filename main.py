@@ -1,4 +1,5 @@
 from telethon import TelegramClient, events
+from telethon.tl.types import InputWebDocument
 
 API_ID = 28418618
 API_HASH = "993aded4010f0bdf844dc777859516b8"
@@ -16,14 +17,24 @@ async def inline_mode(event):
             builder.article(
                 id =            "1", 
                 title =         "گزینه اول", 
-                description =   "این توضیحات گزینه اول است",
+                description =   "این توضیحات گزینه اول است", 
+                thumb =         InputWebDocument(url= "https://www.gizchina.com/wp-content/uploads/images/2025/02/Google-photos.png", 
+                                                 size=0, 
+                                                 mime_type= "image/png", 
+                                                 attributes= []
+                                                 ), 
                 url =           "https://t.me/SinaBanifazl", 
                 text =          "پاسخ گزینه 1"
             ),
             builder.article(
                 id =            "2", 
                 title =         "گزینه دوم", 
-                description =   "این توضیحات گزینه دوم است",
+                description =   "این توضیحات گزینه دوم است", 
+                thumb =         InputWebDocument(url= "https://media.wired.com/photos/5926ffe47034dc5f91bed4e8/3:2/w_2560%2Cc_limit/google-logo.jpg", 
+                                                 size=0, 
+                                                 mime_type= "image/png", 
+                                                 attributes= []
+                                                 ), 
                 url =           "https://instagram.com/SinaBanifazl", 
                 text =          "پاسخ گزینه 2"
             )
