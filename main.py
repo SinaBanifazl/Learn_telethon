@@ -30,9 +30,11 @@ client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOK
     # files = [r"C:\Users\Sina Banifazl\Desktop\bot tel\Learn_telethon\1.png", r"C:\Users\Sina Banifazl\Desktop\bot tel\Learn_telethon\2.png"]
     # await client.send_file(chat_id, files, caption="این یک فایل تست است", force_document=True)
 
-@client.on(events.NewMessage(pattern=r"/hi (.+)"))
+@client.on(events.NewMessage(pattern=r"/hi (.+) and (.+)"))
 async def handle(event):
-    print(event.stringify())
+    first_name = event.pattern_match.group(1)
+    last_name = event.pattern_match.group(2)
+    print(f"first name : {first_name} | last name : {last_name}")
 
 
 print("bot is running...")
