@@ -20,7 +20,7 @@ async def message_handler(event):
         await client.send_message(chat_id, "برنامه بسته شد", reply_to=event.message.id)
         return        
     
-    me = await client.get_entity("@sinabanifazl")
+    me = await client.get_entity(chat_id)
     print(me)
 
 
