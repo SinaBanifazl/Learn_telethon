@@ -37,9 +37,9 @@ async def message_handler(event):
     #                           parse_mode="HTML"
     #                           )
 
-    msg = await event.reply("این پیام قبل از ادیت شدن هست. بعد از 5 ثانیه ادیت میشود")
+    msg = await event.reply("<code>این پیام قبل از ادیت شدن هست. بعد از 5 ثانیه ادیت میشود.(قابل کپی)</code>", parse_mode ="HTML")
     time.sleep(5)
-    await msg.edit("این پیام ادیت شده است. بعد از 5 ثانیه پاک میشود")
+    await msg.edit("<b>این پیام ادیت شده است. بعد از 5 ثانیه پاک میشود.(بولد شده)</b>", parse_mode ="HTML")
     time.sleep(5)
     await msg.delete()
 
