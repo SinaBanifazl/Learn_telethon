@@ -1,4 +1,5 @@
 from telethon import TelegramClient, events
+import time
 
 API_ID = "28418618"
 API_HASH = "993aded4010f0bdf844dc777859516b8"
@@ -36,8 +37,9 @@ async def message_handler(event):
     #                           parse_mode="HTML"
     #                           )
 
-    await event.reply("این پاسخم به پیامی که دادیه. میتونه تو گروه باشه یا پیوی خودم یا هر جایی. این مهمه که event فعال شده و من هر جا که پیام بدی بهت این جوابو میدم. دیگه مثل client.send.message نیست که بخوام ازت chat.id بگیرم.")
-
+    msg = await event.reply("این پیام قبل از ادیت شدن هست.")
+    time.sleep(5)
+    await msg.edit("این پیام ادیت شده است.")
 
 print("bot is running...")
 client.run_until_disconnected()
