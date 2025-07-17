@@ -1,7 +1,7 @@
 from telethon import TelegramClient, events
 import time
 
-API_ID = "28418618"
+API_ID = 28418618
 API_HASH = "993aded4010f0bdf844dc777859516b8"
 BOT_TOKEN = "7611699084:AAErPfRjOMYJVY7kfzlFkazXNyi8SwiKB4c"
 
