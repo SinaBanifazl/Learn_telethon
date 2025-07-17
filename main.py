@@ -27,7 +27,9 @@ async def message_handler(event):
     #                           parse_mode="HTML"
     #                           )
 
-    await client.send_file(chat_id, r"C:\Users\Sina Banifazl\Desktop\bot tel\Learn_telethon\Annotation 2025-07-17 140058.png", caption="این یک فایل تست است", force_document=True)
+    files = [r"C:\Users\Sina Banifazl\Desktop\bot tel\Learn_telethon\1.png", r"C:\Users\Sina Banifazl\Desktop\bot tel\Learn_telethon\2.png"]
+    await client.send_file(chat_id, files, caption="این یک فایل تست است", force_document=True)
+
 
 print("bot is running...")
 client.run_until_disconnected()
