@@ -10,7 +10,8 @@ client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOK
 async def inline_mode(event):
     user_text = event.text
 
-    print(user_text)
+    if user_text == "test":
+        print(user_text)
 
 print("bot is running...")
 client.run_until_disconnected()
