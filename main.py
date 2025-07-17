@@ -13,7 +13,7 @@ async def message_handler(event):
 
     if text == "/start":
         keboard = [
-            [Button.text("دکمه اول")]
+            [Button.text("دکمه اول", resize=True)]
         ]
         await event.reply("اینم از دکمه هاتون جناب", buttons=keboard)
 
