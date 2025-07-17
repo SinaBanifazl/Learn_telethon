@@ -37,9 +37,11 @@ async def message_handler(event):
     #                           parse_mode="HTML"
     #                           )
 
-    msg = await event.reply("این پیام قبل از ادیت شدن هست.")
+    msg = await event.reply("این پیام قبل از ادیت شدن هست. بعد از 5 ثانیه ادیت میشود")
     time.sleep(5)
-    await msg.edit("این پیام ادیت شده است.")
+    await msg.edit("این پیام ادیت شده است. بعد از 5 ثانیه پاک میشود")
+    time.sleep(5)
+    await msg.delete()
 
 print("bot is running...")
 client.run_until_disconnected()
