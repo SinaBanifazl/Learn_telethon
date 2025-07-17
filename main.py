@@ -9,9 +9,21 @@ client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOK
 @client.on(events.InlineQuery)
 async def inline_mode(event):
     user_text = event.text.lower().strip()
+    builder = event.builder
 
     if user_text == "test":
-        print(user_text)
+        inline_items = [
+            builder.article(
+                "گزینه اول",
+                text = "1 متن تست"
+            ),
+            builder.article(
+                "گزینه دوم",
+                text = "2 متن تست"
+            )
+        ]
+
+        await event.answer(inline_items, cache_time=0)
 
 print("bot is running...")
 client.run_until_disconnected()
