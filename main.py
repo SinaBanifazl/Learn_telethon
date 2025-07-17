@@ -12,11 +12,11 @@ async def message_handler(event):
     text = event.text
 
     if text == "/start":
-        keboard = [
+        keyboard = [
             [Button.text("دکمه اول", resize=True), Button.text("دکمه دوم", resize=True)],
             [Button.text("دکمه سوم", resize=True), Button.text("دکمه چهارم", resize=True)]
         ]
-        await event.reply("اینم از دکمه هاتون جناب", buttons=keboard)
+        await event.reply("اینم از دکمه هاتون جناب", buttons=keyboard)
 
     if text == "دکمه دوم":
         await event.reply("فهمیدم دکمه دوم رو زدی")
@@ -29,6 +29,12 @@ async def message_handler(event):
             [Button.switch_inline(text="دکمه اینلاین", query="test")]
         ]
         await event.reply("دکمه حالت اینلاین", buttons=keyboard)
+
+    if text == "/loc":
+        keyboard = [
+            [Button.request_location("ارسال لوکیشن", resize=True)]
+        ]
+        await event.reply("یک متن تست است", buttons=keyboard)
 
 print("bot is running...")
 client.run_until_disconnected()
