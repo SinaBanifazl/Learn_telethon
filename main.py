@@ -14,12 +14,18 @@ async def inline_mode(event):
     if user_text == "test":
         inline_items = [
             builder.article(
-                "گزینه اول",
-                text = "1 متن تست"
+                id =            "1", 
+                title =         "گزینه اول", 
+                description =   "این توضیحات گزینه اول است",
+                url =           "https://t.me/SinaBanifazl", 
+                text =          "پاسخ گزینه 1"
             ),
             builder.article(
-                "گزینه دوم",
-                text = "2 متن تست"
+                id =            "2", 
+                title =         "گزینه دوم", 
+                description =   "این توضیحات گزینه دوم است",
+                url =           "https://instagram.com/SinaBanifazl", 
+                text =          "پاسخ گزینه 2"
             )
         ]
 
