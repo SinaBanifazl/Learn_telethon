@@ -34,7 +34,13 @@ async def message_handler(event):
         keyboard = [
             [Button.request_location("ارسال لوکیشن", resize=True)]
         ]
-        await event.reply("یک متن تست است", buttons=keyboard)
+        await event.reply("برای ارسال لوکیشن روی دکمه ارسال کلیک کنید", buttons=keyboard)
+
+    if text == "/phone":
+        keyboard = [
+            [Button.request_phone("ارسال شماره تلفن", resize=True)]
+        ]
+        await event.reply("برای ارسال شماره تلفن روی دکمه ارسال کلیک کنید", buttons=keyboard)
 
 print("bot is running...")
 client.run_until_disconnected()
