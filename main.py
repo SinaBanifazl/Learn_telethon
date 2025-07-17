@@ -26,22 +26,8 @@ async def message_handler(event):
     #                           reply_to=event.message.id, 
     #                           parse_mode="HTML"
     #                           )
-    # await client.send_message(chat_id, 
-    #                           f"<i>{text}</i> | کج شده", 
-    #                           reply_to=event.message.id, 
-    #                           parse_mode="HTML"
-    #                           )
-    # await client.send_message(chat_id, 
-    #                           f"<code>{text}</code> | کد شده(قابل کپی با کلیک روی اون) ", 
-    #                           reply_to=event.message.id, 
-    #                           parse_mode="HTML"
-    #                           )
 
-    msg = await event.reply("<code>این پیام قبل از ادیت شدن هست. بعد از 5 ثانیه ادیت میشود.(قابل کپی)</code>", parse_mode ="HTML")
-    time.sleep(5)
-    await msg.edit("<b>این پیام ادیت شده است. بعد از 5 ثانیه پاک میشود.(بولد شده)</b>", parse_mode ="HTML")
-    time.sleep(5)
-    await msg.delete()
+    await client.send_file(chat_id, r"file location", caption="این یک فایل تست است")
 
 print("bot is running...")
 client.run_until_disconnected()
