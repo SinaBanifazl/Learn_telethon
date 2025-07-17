@@ -8,7 +8,7 @@ client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOK
 
 @client.on(events.InlineQuery)
 async def inline_mode(event):
-    print("in use")
+    print(event.stringify())
 
 
 print("bot is running...")
