@@ -13,9 +13,14 @@ async def message_handler(event):
 
     if text == "/start":
         keboard = [
-            [Button.text("دکمه اول", resize=True)]
+            [Button.text("دکمه اول", resize=True), Button.text("دکمه دوم", resize=True)],
+            [Button.text("دکمه سوم", resize=True), Button.text("دکمه چهارم", resize=True)]
         ]
         await event.reply("اینم از دکمه هاتون جناب", buttons=keboard)
+
+    if text == "دکمه دوم":
+        await event.reply("فهمیدم دکمه دوم رو زدی")
+    
 
 print("bot is running...")
 client.run_until_disconnected()
