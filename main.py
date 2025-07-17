@@ -21,7 +21,7 @@ async def message_handler(event):
         return        
     
     me = await client.get_me()
-    print(me)
+    print(me.id)
 
 
 print("bot is running...")
