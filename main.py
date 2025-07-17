@@ -20,8 +20,8 @@ async def message_handler(event):
         await client.send_message(chat_id, "برنامه بسته شد", reply_to=event.message.id)
         return        
     
-    me = await client.get_me()
-    print(me.id)
+    me = await client.get_entity("@sinabanifazl")
+    print(me)
 
 
 print("bot is running...")
