@@ -36,7 +36,7 @@ async def message_handler(event):
     #                           parse_mode="HTML"
     #                           )
 
-    await event.respond("این پاسخم به پیامی که دادیه. میتونه تو گروه باشه یا پیوی خودم یا هر جایی. این مهمه که event فعال شده و من هر جا که پیام بدی بهت این جوابو میدم. دیگه مثل client.send.message نیست که بخوام ازت chat.id بگیرم.")
+    await event.reply("این پاسخم به پیامی که دادیه. میتونه تو گروه باشه یا پیوی خودم یا هر جایی. این مهمه که event فعال شده و من هر جا که پیام بدی بهت این جوابو میدم. دیگه مثل client.send.message نیست که بخوام ازت chat.id بگیرم.")
 
 
 print("bot is running...")
