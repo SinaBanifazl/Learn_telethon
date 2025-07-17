@@ -24,6 +24,11 @@ async def message_handler(event):
     if text == "/dell":
         await event.reply("دکمه های شما با موفقیت حذف شد", buttons=Button.clear())
     
+    if text == "/inline":
+        keyboard = [
+            [Button.switch_inline(text="دکمه اینلاین", query="test")]
+        ]
+        await event.reply("دکمه حالت اینلاین", buttons=keyboard)
 
 print("bot is running...")
 client.run_until_disconnected()
