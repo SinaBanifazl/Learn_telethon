@@ -49,9 +49,10 @@ async def message_handler(event):
         ]
         await event.reply("این دکمه شیشه ای شماست", buttons=keyboard)
 
-@client.on(events.CallbackQuery(data="banfao_3124"))
+@client.on(events.CallbackQuery(pattern=b"banfao_.*"))
 async def call_back(event):
-    await event.answer("این یک متن هشدار است. جدی بگیر وگرنه میزنمت...", alert=True)
+    user_id = int(event.data.decode().split("_")[1])
+    await event.answer(f"{user_id}", alert=True)
 
 print("bot is running...")
 client.run_until_disconnected()
