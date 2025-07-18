@@ -42,5 +42,12 @@ async def message_handler(event):
         ]
         await event.reply("برای ارسال شماره تلفن روی دکمه ارسال کلیک کنید", buttons=keyboard)
 
+    if text == "/smart":
+        keyboard = [
+            Button.inline(text= "کلیک کنید",
+                          data= "banfao")
+        ]
+        await event.reply("این دکمه شیشه ای شماست", buttons=keyboard)
+
 print("bot is running...")
 client.run_until_disconnected()
