@@ -7,6 +7,8 @@ BOT_TOKEN = "7611699084:AAErPfRjOMYJVY7kfzlFkazXNyi8SwiKB4c"
 
 client = TelegramClient("bot_session", API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
+vote_count = 0
+
 @client.on(events.NewMessage)
 async def message_handler(event):
     text = event.text
@@ -56,10 +58,24 @@ async def message_handler(event):
         ]
         await event.reply("این دکمه شیشه ای شماست", buttons=keyboard)
 
-@client.on(events.CallbackQuery(pattern=b"banfao_.*"))
+    if text == "/vote":
+        keyboard = [
+            Button.inline(text= "برای ثبت رای کلیک کنید", 
+                          data= "vote_up")
+        ]
+        await event.reply(f"تعداد رای ها : {vote_count}", buttons=keyboard)
+
+@client.on(events.CallbackQuery(data="vote_up"))
 async def call_back(event):
-    user_id = int(event.data.decode().split("_")[1])
-    await event.answer(f"{user_id}", alert=True)
+    global vote_count
+    vote_count += 1
+
+    keyboard = [
+        Button.inline(text= "رای دادم👍", 
+                        data= "vote_up")
+    ]
+
+    await event.edit(f"تعداد رای ها : {vote_count}", buttons=keyboard)
 
 print("bot is running...")
 client.run_until_disconnected()
