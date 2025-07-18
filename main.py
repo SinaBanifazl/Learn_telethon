@@ -61,20 +61,46 @@ async def message_handler(event):
     if text == "/vote":
         keyboard = [
             Button.inline(text= "برای ثبت رای کلیک کنید", 
-                          data= "vote_up")
+                          data= "vote_up/down")
         ]
         await event.reply(f"تعداد رای ها : {vote_count}", buttons=keyboard)
 
-@client.on(events.CallbackQuery(data="vote_up"))
+@client.on(events.CallbackQuery(data="vote_up/down"))
+async def call_back(event):
+
+    keyboard = [
+        Button.inline(text= "موافقم👍", 
+                      data= "do_vote_up"),
+        Button.inline(text= "مخالفم👎",
+                      data= "do_vote_down")
+    ]
+
+    await event.edit(f"تعداد رای ها : {vote_count}", buttons=keyboard)
+
+@client.on(events.CallbackQuery(data="do_vote_up"))
 async def call_back(event):
     global vote_count
     vote_count += 1
 
     keyboard = [
-        Button.inline(text= "رای دادم👍", 
-                        data= "vote_up")
+        Button.inline(text= "موافقم👍", 
+                      data= "do_vote_up"),
+        Button.inline(text= "مخالفم👎",
+                      data= "do_vote_down")
     ]
+    await event.edit(f"تعداد رای ها : {vote_count}", buttons=keyboard)
 
+@client.on(events.CallbackQuery(data="do_vote_down"))
+async def call_back(event):
+    global vote_count
+    vote_count -= 1
+
+    keyboard = [
+        Button.inline(text= "موافقم👍", 
+                      data= "do_vote_up"),
+        Button.inline(text= "مخالفم👎",
+                      data= "do_vote_down")
+    ]
     await event.edit(f"تعداد رای ها : {vote_count}", buttons=keyboard)
 
 print("bot is running...")
