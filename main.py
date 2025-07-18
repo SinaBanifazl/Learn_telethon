@@ -51,7 +51,7 @@ async def message_handler(event):
 
 @client.on(events.CallbackQuery(data="banfao_3124"))
 async def call_back(event):
-    await event.answer("این یک متن هشدار است. جدی بگیر وگرنه میزنمت...")
+    await event.answer("این یک متن هشدار است. جدی بگیر وگرنه میزنمت...", alert=True)
 
 print("bot is running...")
 client.run_until_disconnected()
