@@ -45,9 +45,13 @@ async def message_handler(event):
     if text == "/smart":
         keyboard = [
             Button.inline(text= "کلیک کنید",
-                          data= "banfao")
+                          data= "banfao_3124")
         ]
         await event.reply("این دکمه شیشه ای شماست", buttons=keyboard)
+
+@client.on(events.CallbackQuery(data="banfao_3124"))
+async def call_back(event):
+    print(event)
 
 print("bot is running...")
 client.run_until_disconnected()
