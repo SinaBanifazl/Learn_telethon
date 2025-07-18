@@ -49,6 +49,13 @@ async def message_handler(event):
         ]
         await event.reply("این دکمه شیشه ای شماست", buttons=keyboard)
 
+    if text == "/url":
+        keyboard = [
+            Button.url(text= "برای ورود به گوگل کلیک کنید",
+                    url= "https://www.google.com/")
+        ]
+        await event.reply("این دکمه شیشه ای شماست", buttons=keyboard)
+
 @client.on(events.CallbackQuery(pattern=b"banfao_.*"))
 async def call_back(event):
     user_id = int(event.data.decode().split("_")[1])
