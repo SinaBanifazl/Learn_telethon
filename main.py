@@ -51,7 +51,7 @@ async def message_handler(event):
 
 @client.on(events.CallbackQuery(data="banfao_3124"))
 async def call_back(event):
-    print(event)
+    await event.respond("این پیام من بعد از هر بار کلیک کردن است")
 
 print("bot is running...")
 client.run_until_disconnected()
